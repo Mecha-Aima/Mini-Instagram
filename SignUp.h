@@ -2,6 +2,7 @@
 #include <msclr/marshal_cppstd.h>	
 #include "../Instagram_clone/headers/app/user.h"
 #include "../Instagram_clone/headers/app/users_graph.h"
+#include "Home.h"
 
 namespace Instagramclone {
 
@@ -315,7 +316,18 @@ namespace Instagramclone {
 			
 			if (network->authenticateLogin(username, password))
 			{
-				cout << "Hello\n";
+				User* currUser = network->searchUser(username);
+				if (currUser)
+				{
+					Home^ homeForm = gcnew Home(currUser, network);
+					homeForm->Show();
+					this->Close();
+				}
+				else
+				{
+					MessageBox::Show("Exception: No user object created", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				}
+				
 			}
 			else
 			{
@@ -335,6 +347,9 @@ namespace Instagramclone {
 			else
 			{
 				this->network->addUser(newUser);
+				Home^ homeForm = gcnew Home(newUser, network);
+				homeForm->Show();
+				this->Close();
 			}
 		}
 	}

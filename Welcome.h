@@ -26,13 +26,13 @@ namespace Instagramclone {
 			InitializeComponent();
 			try
 			{
-				network = new UserGraph();
+				this->network = new UserGraph();
 				admin = new AdminUser("aimenAmeer", "mySecret13", "London", *network);
 				// Create some pre-exisiting users
-				network->addUser("amazingUser", "amazing_123", "Los Angeles");
-				network->addUser("gamerGirl", "GTA6@waiting", "London");
-				network->addUser("bookWorm", "iLoveBooks1?", "Paris");
-				network->addUser("codingNinja", "center%div23", "Tokyo");
+				this->network->addUser("amazingUser", "aMazing_123", "Los Angeles");
+				this->network->addUser("gamerGirl", "GTA69_waiting", "London");
+				this->network->addUser("bookWorm", "iLoveBooks1?", "Paris");
+				this->network->addUser("codingNinja", "Center%div23", "Tokyo");
 			}
 			catch (const std::exception& e)
 			{

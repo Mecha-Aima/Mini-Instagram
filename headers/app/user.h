@@ -53,6 +53,7 @@ public:
     string getCity() const;
     string getLastLogin() const;
     Stack<Post> getPosts() const;
+    Stack<Post> getFollowedPosts() const;
     void updateLastLogin();
     void addFriend(User *user);
     void removeFriend(User *user);
@@ -80,7 +81,7 @@ public:
     FriendRequest* getRequest(User *user);
     // Notifications
     void receiveNotification(User *receiver, const string& content);
-    void showNotifications() const;
+    Queue<string> getNotifications() const;
 
     friend ostream& operator<<(ostream& os, const User& user);
 };

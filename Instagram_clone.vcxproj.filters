@@ -99,4 +99,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="media\bell_icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="media\biege_bg.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="media\bubble_bg.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="media\cubes_bg.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="media\dark_bg.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="media\folds_bg.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="media\peach_bg.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

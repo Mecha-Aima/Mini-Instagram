@@ -91,6 +91,7 @@ string User::getUsername() const { return this->username; }
 string User::getCity() const { return this->city; }
 string User::getLastLogin() const { return this->last_login; }
 Stack<Post> User::getPosts() const { return this->posts; }
+Stack<Post> User::getFollowedPosts() const { return this->followed_posts; }
 
 void User::setUsername(string username)
 {
@@ -366,20 +367,7 @@ void User::receiveNotification(User *receiver, const string& content)
     this->notifications.enqueue(notification);
 }
 
-void User::showNotifications() const
+Queue<string> User::getNotifications() const
 {
-    if (this->notifications.isEmpty())
-    {
-        cout << "No notifications" << endl;
-        return;
-    }
-    cout << "NOTIFICATIONS" << endl;
-    cout << setw(40) << setfill('=') << "" << "\n" << setfill(' ');
-    QueueNode<string>* current = this->notifications.getFront();
-    while (current != nullptr)
-    {
-        cout << current->data << endl;
-        current = current->next;
-    }
-    cout << setw(40) << setfill('-') << "" << "\n" << setfill(' ');
+    return this->notifications;
 }

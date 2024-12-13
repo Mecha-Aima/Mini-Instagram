@@ -167,6 +167,15 @@
       <DependentUpon>Welcome.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="media\bell_icon.png" />
+    <Image Include="media\biege_bg.jpg" />
+    <Image Include="media\bubble_bg.jpg" />
+    <Image Include="media\cubes_bg.jpg" />
+    <Image Include="media\dark_bg.jpg" />
+    <Image Include="media\folds_bg.jpg" />
+    <Image Include="media\peach_bg.jpg" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
