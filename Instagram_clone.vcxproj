@@ -120,6 +120,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Friends.cpp" />
     <ClCompile Include="Home.cpp" />
     <ClCompile Include="SearchForm.cpp" />
     <ClCompile Include="SignUp.cpp" />
@@ -135,6 +136,9 @@
     <ClCompile Include="Welcome.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Friends.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="headers\ADTs\AVLTree.h" />
     <ClInclude Include="headers\ADTs\graph.h" />
     <ClInclude Include="headers\ADTs\hashTable.h" />
@@ -161,6 +165,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Friends.resx">
+      <DependentUpon>Friends.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.h</DependentUpon>
     </EmbeddedResource>

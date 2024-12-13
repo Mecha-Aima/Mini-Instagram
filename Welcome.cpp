@@ -8,6 +8,5 @@ void main(cli::array<String^>^ args) {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
 
-    Instagramclone::Welcome form; // Replace with your actual form name
-    Application::Run(% form);
+    Instagramclone::Welcome form;     Application::Run(% form);
 }

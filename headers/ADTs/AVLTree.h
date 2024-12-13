@@ -15,8 +15,7 @@ class AVLTree{
 public:
     AVLTree() : root(nullptr) {}
     AVLTree(const AVLTree<T> &other);
-    // Constructor that takes a root node and the size of the tree
-    AVLTree(TreeVertex<T>* other);
+        AVLTree(TreeVertex<T>* other);
     virtual ~AVLTree();
     void insert(T);
     void remove(T);
@@ -36,15 +35,12 @@ protected:
     void remove(TreeVertex<T>*&, T);
     void delete_tree(TreeVertex<T> *);
     void copy_tree(TreeVertex<T> *&, TreeVertex<T> *);
-    // Display
-    void inorder(TreeVertex<T> *) const;
-    // Rotations
-    void right_rotate(TreeVertex<T> *&);
+        void inorder(TreeVertex<T> *) const;
+        void right_rotate(TreeVertex<T> *&);
     void left_rotate(TreeVertex<T> *&);
     void LR_rotate(TreeVertex<T> *&);
     void RL_rotate(TreeVertex<T> *&);
-    // Remove function helper
-    TreeVertex<T> *min_right(TreeVertex<T> *node);
+        TreeVertex<T> *min_right(TreeVertex<T> *node);
 
     void updateHeight(TreeVertex<T> *node);
 

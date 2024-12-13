@@ -2,8 +2,7 @@
 using namespace std;
 
 UserGraph::UserGraph() {
-    this->user_lookup = new HashTable(100); // max users
-}
+    this->user_lookup = new HashTable(100); }
 
 UserGraph::~UserGraph() {
     ListNode<User *> *current = this->users.getHead();
@@ -31,10 +30,7 @@ void UserGraph::addUser(User* user)
         return;
     }
     this->users.add(user);
-    this->user_lookup->insert(user->username, user->password); // Add to lookup
-    this->user_tree.insertUser(user); // Add to search tree
-    this->add(user); // Add to graph
-}
+    this->user_lookup->insert(user->username, user->password);     this->user_tree.insertUser(user);     this->add(user); }
 
 void UserGraph::addUser(string username, string password, string city)
 {
@@ -52,10 +48,7 @@ void UserGraph::addUser(string username, string password, string city)
         return;
     }
     this->users.add(user);
-    this->user_lookup->insert(user->username, user->password); // Add to lookup
-    this->user_tree.insertUser(user); // Add to search tree
-    this->add(user); // Add to graph
-}
+    this->user_lookup->insert(user->username, user->password);     this->user_tree.insertUser(user);     this->add(user); }
 
 void UserGraph::removeUser(string username)
 {
@@ -65,16 +58,14 @@ void UserGraph::removeUser(string username)
         cout << "User does not exist" << endl;
         return;
     }
-    // Remove user from friends' lists
-    Vertex<User *> *current = this->getVertex(user);
+        Vertex<User *> *current = this->getVertex(user);
     AdjListNode<User *> *adj = current->head;
     while (adj)
     {
         adj->data->removeFriend(user);
         adj = adj->next;
     }
-    // Remove user from followed list of other users
-    current = this->head;
+        current = this->head;
     while (current)
     {
         if (current->value == user || current->value->followed.contains(user))
@@ -117,6 +108,7 @@ void UserGraph::acceptRequest(User *sender, User *receiver)
     {
         fr->setStatus("accepted");
         sender->addFriend(receiver);
+        sender->receiveNotification(receiver, " accepted your friend request");
         receiver->addFriend(sender);
         this->addEdge(sender, receiver);
     }
@@ -165,10 +157,8 @@ bool UserGraph::authenticateLogin(string username, string password)
     string actualPassword = this->user_lookup->search(username);
     if (actualPassword != "")
     {
-        return actualPassword == password; // match password
-    }
-    return false; // incorrect username
-}
+        return actualPassword == password;     }
+    return false; }
 
 void UserGraph::sendFollowRequest(User *sender, User *receiver)
 {

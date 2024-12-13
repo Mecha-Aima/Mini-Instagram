@@ -15,10 +15,7 @@ namespace Instagramclone {
 	using namespace System::Drawing;
 	
 
-	/// <summary>
-	/// Summary for Welcome
-	/// </summary>
-	public ref class Welcome : public System::Windows::Forms::Form
+				public ref class Welcome : public System::Windows::Forms::Form
 	{
 	public:
 		Welcome(void)
@@ -28,8 +25,7 @@ namespace Instagramclone {
 			{
 				this->network = new UserGraph();
 				admin = new AdminUser("aimenAmeer", "mySecret13", "London", *network);
-				// Create some pre-exisiting users
-				this->network->addUser("amazingUser", "aMazing_123", "Los Angeles");
+								this->network->addUser("amazingUser", "aMazing_123", "Los Angeles");
 				this->network->addUser("gamerGirl", "GTA69_waiting", "London");
 				this->network->addUser("bookWorm", "iLoveBooks1?", "Paris");
 				this->network->addUser("codingNinja", "Center%div23", "Tokyo");
@@ -42,10 +38,7 @@ namespace Instagramclone {
 		}
 
 	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		~Welcome()
+								~Welcome()
 		{
 			if (components)
 			{
@@ -63,21 +56,14 @@ namespace Instagramclone {
 		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		void InitializeComponent(void)
+										void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Welcome::typeid));
 			this->title = (gcnew System::Windows::Forms::Label());
 			this->btnGetStarted = (gcnew System::Windows::Forms::Button());
 			this->btnQuit = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
-			// 
-			// title
-			// 
-			this->title->AutoSize = true;
+												this->title->AutoSize = true;
 			this->title->BackColor = System::Drawing::Color::Black;
 			this->title->Font = (gcnew System::Drawing::Font(L"Script MT Bold", 48, System::Drawing::FontStyle::Bold));
 			this->title->ForeColor = System::Drawing::Color::White;
@@ -86,10 +72,7 @@ namespace Instagramclone {
 			this->title->Size = System::Drawing::Size(454, 77);
 			this->title->TabIndex = 0;
 			this->title->Text = L"Mini Instagram";
-			// 
-			// btnGetStarted
-			// 
-			this->btnGetStarted->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(243)), static_cast<System::Int32>(static_cast<System::Byte>(244)),
+												this->btnGetStarted->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(243)), static_cast<System::Int32>(static_cast<System::Byte>(244)),
 				static_cast<System::Int32>(static_cast<System::Byte>(173)));
 			this->btnGetStarted->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnGetStarted->Font = (gcnew System::Drawing::Font(L"Calibri", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -101,10 +84,7 @@ namespace Instagramclone {
 			this->btnGetStarted->Text = L"Get Started";
 			this->btnGetStarted->UseVisualStyleBackColor = false;
 			this->btnGetStarted->Click += gcnew System::EventHandler(this, &Welcome::btnGetStarted_Click);
-			// 
-			// btnQuit
-			// 
-			this->btnQuit->BackColor = System::Drawing::Color::Black;
+												this->btnQuit->BackColor = System::Drawing::Color::Black;
 			this->btnQuit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnQuit->Font = (gcnew System::Drawing::Font(L"Calibri", 14));
 			this->btnQuit->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
@@ -116,10 +96,7 @@ namespace Instagramclone {
 			this->btnQuit->Text = L"Quit App";
 			this->btnQuit->UseVisualStyleBackColor = false;
 			this->btnQuit->Click += gcnew System::EventHandler(this, &Welcome::btnQuit_Click);
-			// 
-			// Welcome
-			// 
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
+												this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(242)), static_cast<System::Int32>(static_cast<System::Byte>(243)),
 				static_cast<System::Int32>(static_cast<System::Byte>(174)));
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));

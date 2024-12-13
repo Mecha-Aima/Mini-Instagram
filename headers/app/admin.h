@@ -9,10 +9,8 @@
 using namespace std;
 
 class AdminUser : public User {
-    // Very different from a regular user
-private:
-    UserGraph& user_graph; // Reference to the user graph
-public:
+    private:
+    UserGraph& user_graph; public:
     AdminUser(string username, string password, string city, UserGraph& graph);
     void addNewUser(string username, string password, string city);
     void removeUser(string username);

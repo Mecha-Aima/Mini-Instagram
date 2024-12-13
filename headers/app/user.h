@@ -58,29 +58,24 @@ public:
     void addFriend(User *user);
     void removeFriend(User *user);
     void removeFollowedUser(User *user);
-    void listFollowers() const;
-    void listFriends() const;
+    ListNode<User*>* listFollowed() const;
+    ListNode<User*>* listFriends() const;
 
     User& operator=(const User& other);
     bool operator<(const User& other) const;
-    // Posts
-    void addPost(const string &content);
+        void addPost(const string &content);
     void follow(User* user);
     void newsFeed();
     void refreshFeed();
-    // Messaging
-    Messages& getMessages();
+        Messages& getMessages();
     void sendMessage(const string& content, User *receiver);
-    void openInbox(); // view unread messages
-    Message peekInbox();
-    // Friend requests
-    void addRequest(FriendRequest *fr);
+    void openInbox();     Message peekInbox();
+        void addRequest(FriendRequest *fr);
     void sendFriendRequest(User* user);
     void processRequests();
     void showRequests();
     FriendRequest* getRequest(User *user);
-    // Notifications
-    void receiveNotification(User *receiver, const string& content);
+        void receiveNotification(User *receiver, const string& content);
     Queue<string> getNotifications() const;
 
     friend ostream& operator<<(ostream& os, const User& user);

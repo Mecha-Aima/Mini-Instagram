@@ -21,8 +21,7 @@ struct Vertex {
 template <typename T>
 class Graph{
 protected:
-    // As adjacency list
-    Vertex<T> *head;
+        Vertex<T> *head;
     int size;
 
     void DFTraversalHelper(Vertex<T> *v, bool visited[]) const;
@@ -44,8 +43,7 @@ public:
     void clear();
     bool hasEdge(T u, T v) const; 
     
-    // graph traversals
-    void depthFirstTraversal() const;
+        void depthFirstTraversal() const;
     void breadthFirstTraversal() const;
     Vertex<T>* depthFirstSearch(T data) const;
     Vertex<T>* DFSHelper(Vertex<T> *v, bool visited[]) const;

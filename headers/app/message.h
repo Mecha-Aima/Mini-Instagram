@@ -42,8 +42,7 @@ public:
     void clearMessages();
 };
 
-class realTimeMessages { // to simulate real-time messaging
-private:
+class realTimeMessages { private:
     Queue<Message> messages;
 public:
     friend class Messages;

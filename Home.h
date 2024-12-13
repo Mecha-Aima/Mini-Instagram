@@ -3,6 +3,7 @@
 #include "../Instagram_clone/headers/app/user.h"
 #include "../Instagram_clone/headers/app/users_graph.h"
 #include "SearchForm.h"
+#include "Friends.h"
 
 
 namespace Instagramclone {
@@ -15,10 +16,7 @@ namespace Instagramclone {
 	using namespace System::Drawing;
 
 
-	/// <summary>
-	/// Summary for Home
-	/// </summary>
-	public ref class Home : public System::Windows::Forms::Form
+				public ref class Home : public System::Windows::Forms::Form
 	{
 	public:
 		/*ref class PostControl;*/
@@ -35,10 +33,7 @@ namespace Instagramclone {
 		}
 
 	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		~Home()
+								~Home()
 		{
 			if (components)
 			{
@@ -78,11 +73,7 @@ namespace Instagramclone {
 		
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		void InitializeComponent(void)
+										void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Home::typeid));
 			this->title = (gcnew System::Windows::Forms::Label());
@@ -116,10 +107,7 @@ namespace Instagramclone {
 			this->panel4->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// title
-			// 
-			this->title->AutoSize = true;
+												this->title->AutoSize = true;
 			this->title->Font = (gcnew System::Drawing::Font(L"Script MT Bold", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->title->ForeColor = System::Drawing::Color::Black;
@@ -129,10 +117,7 @@ namespace Instagramclone {
 			this->title->Size = System::Drawing::Size(152, 38);
 			this->title->TabIndex = 0;
 			this->title->Text = L"Your Feed";
-			// 
-			// feedFlowPanel
-			// 
-			this->feedFlowPanel->AutoScroll = true;
+												this->feedFlowPanel->AutoScroll = true;
 			this->feedFlowPanel->AutoSize = true;
 			this->feedFlowPanel->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->feedFlowPanel->BackColor = System::Drawing::Color::Transparent;
@@ -142,10 +127,7 @@ namespace Instagramclone {
 			this->feedFlowPanel->Size = System::Drawing::Size(0, 0);
 			this->feedFlowPanel->TabIndex = 1;
 			this->feedFlowPanel->WrapContents = false;
-			// 
-			// bellIcon
-			// 
-			this->bellIcon->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bellIcon.BackgroundImage")));
+												this->bellIcon->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bellIcon.BackgroundImage")));
 			this->bellIcon->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->bellIcon->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bellIcon.Image")));
 			this->bellIcon->Location = System::Drawing::Point(14, 7);
@@ -154,18 +136,12 @@ namespace Instagramclone {
 			this->bellIcon->TabIndex = 2;
 			this->bellIcon->TabStop = false;
 			this->bellIcon->Click += gcnew System::EventHandler(this, &Home::bellIcon_Click);
-			// 
-			// panel1
-			// 
-			this->panel1->Controls->Add(this->bellIcon);
+												this->panel1->Controls->Add(this->bellIcon);
 			this->panel1->Location = System::Drawing::Point(708, 32);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(62, 59);
 			this->panel1->TabIndex = 3;
-			// 
-			// sidebarPanel
-			// 
-			this->sidebarPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+												this->sidebarPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->sidebarPanel->Controls->Add(this->notificationPanel);
 			this->sidebarPanel->Location = System::Drawing::Point(787, 1);
@@ -173,10 +149,7 @@ namespace Instagramclone {
 			this->sidebarPanel->Size = System::Drawing::Size(280, 720);
 			this->sidebarPanel->TabIndex = 0;
 			this->sidebarPanel->Visible = false;
-			// 
-			// notificationPanel
-			// 
-			this->notificationPanel->AutoScroll = true;
+												this->notificationPanel->AutoScroll = true;
 			this->notificationPanel->AutoSize = true;
 			this->notificationPanel->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->notificationPanel->Dock = System::Windows::Forms::DockStyle::Top;
@@ -184,19 +157,13 @@ namespace Instagramclone {
 			this->notificationPanel->Name = L"notificationPanel";
 			this->notificationPanel->Size = System::Drawing::Size(280, 0);
 			this->notificationPanel->TabIndex = 0;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
+												this->label1->AutoSize = true;
 			this->label1->Location = System::Drawing::Point(0, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(35, 13);
 			this->label1->TabIndex = 4;
 			this->label1->Text = L"label1";
-			// 
-			// friendRequestlbl
-			// 
-			this->friendRequestlbl->AutoSize = true;
+												this->friendRequestlbl->AutoSize = true;
 			this->friendRequestlbl->BackColor = System::Drawing::Color::Transparent;
 			this->friendRequestlbl->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -205,10 +172,7 @@ namespace Instagramclone {
 			this->friendRequestlbl->Size = System::Drawing::Size(84, 19);
 			this->friendRequestlbl->TabIndex = 5;
 			this->friendRequestlbl->Text = L"Add Friend";
-			// 
-			// friendRequestPnl
-			// 
-			this->friendRequestPnl->BackColor = System::Drawing::Color::Khaki;
+												this->friendRequestPnl->BackColor = System::Drawing::Color::Khaki;
 			this->friendRequestPnl->Controls->Add(this->friendIcon);
 			this->friendRequestPnl->Controls->Add(this->friendRequestlbl);
 			this->friendRequestPnl->Location = System::Drawing::Point(588, 112);
@@ -216,20 +180,14 @@ namespace Instagramclone {
 			this->friendRequestPnl->Size = System::Drawing::Size(182, 60);
 			this->friendRequestPnl->TabIndex = 6;
 			this->friendRequestPnl->Click += gcnew System::EventHandler(this, &Home::friendRequestPnl_Click);
-			// 
-			// friendIcon
-			// 
-			this->friendIcon->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"friendIcon.BackgroundImage")));
+												this->friendIcon->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"friendIcon.BackgroundImage")));
 			this->friendIcon->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->friendIcon->Location = System::Drawing::Point(12, 13);
 			this->friendIcon->Name = L"friendIcon";
 			this->friendIcon->Size = System::Drawing::Size(35, 36);
 			this->friendIcon->TabIndex = 6;
 			this->friendIcon->TabStop = false;
-			// 
-			// panel2
-			// 
-			this->panel2->BackColor = System::Drawing::Color::WhiteSmoke;
+												this->panel2->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->panel2->Controls->Add(this->pictureBox1);
 			this->panel2->Controls->Add(this->label2);
 			this->panel2->Location = System::Drawing::Point(588, 200);
@@ -237,20 +195,14 @@ namespace Instagramclone {
 			this->panel2->Size = System::Drawing::Size(182, 60);
 			this->panel2->TabIndex = 7;
 			this->panel2->Click += gcnew System::EventHandler(this, &Home::panel2_Click);
-			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+												this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->pictureBox1->Location = System::Drawing::Point(12, 13);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(35, 36);
 			this->pictureBox1->TabIndex = 6;
 			this->pictureBox1->TabStop = false;
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
+												this->label2->AutoSize = true;
 			this->label2->BackColor = System::Drawing::Color::Transparent;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -259,10 +211,7 @@ namespace Instagramclone {
 			this->label2->Size = System::Drawing::Size(95, 19);
 			this->label2->TabIndex = 5;
 			this->label2->Text = L"View Friends";
-			// 
-			// panel3
-			// 
-			this->panel3->BackColor = System::Drawing::Color::Sienna;
+												this->panel3->BackColor = System::Drawing::Color::Sienna;
 			this->panel3->Controls->Add(this->pictureBox2);
 			this->panel3->Controls->Add(this->label3);
 			this->panel3->Location = System::Drawing::Point(588, 285);
@@ -270,20 +219,14 @@ namespace Instagramclone {
 			this->panel3->Size = System::Drawing::Size(182, 60);
 			this->panel3->TabIndex = 8;
 			this->panel3->Click += gcnew System::EventHandler(this, &Home::panel3_Click);
-			// 
-			// pictureBox2
-			// 
-			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
+												this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
 			this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->pictureBox2->Location = System::Drawing::Point(12, 13);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(35, 36);
 			this->pictureBox2->TabIndex = 6;
 			this->pictureBox2->TabStop = false;
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
+												this->label3->AutoSize = true;
 			this->label3->BackColor = System::Drawing::Color::Transparent;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -293,10 +236,7 @@ namespace Instagramclone {
 			this->label3->Size = System::Drawing::Size(105, 19);
 			this->label3->TabIndex = 5;
 			this->label3->Text = L"Send Message";
-			// 
-			// panel4
-			// 
-			this->panel4->BackColor = System::Drawing::Color::WhiteSmoke;
+												this->panel4->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->panel4->Controls->Add(this->pictureBox3);
 			this->panel4->Controls->Add(this->label4);
 			this->panel4->Location = System::Drawing::Point(588, 363);
@@ -304,20 +244,14 @@ namespace Instagramclone {
 			this->panel4->Size = System::Drawing::Size(182, 60);
 			this->panel4->TabIndex = 9;
 			this->panel4->Click += gcnew System::EventHandler(this, &Home::panel4_Click);
-			// 
-			// pictureBox3
-			// 
-			this->pictureBox3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.BackgroundImage")));
+												this->pictureBox3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.BackgroundImage")));
 			this->pictureBox3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->pictureBox3->Location = System::Drawing::Point(12, 13);
 			this->pictureBox3->Name = L"pictureBox3";
 			this->pictureBox3->Size = System::Drawing::Size(35, 36);
 			this->pictureBox3->TabIndex = 6;
 			this->pictureBox3->TabStop = false;
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
+												this->label4->AutoSize = true;
 			this->label4->BackColor = System::Drawing::Color::Transparent;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -327,10 +261,7 @@ namespace Instagramclone {
 			this->label4->Size = System::Drawing::Size(61, 19);
 			this->label4->TabIndex = 5;
 			this->label4->Text = L"Log out";
-			// 
-			// Home
-			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+												this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
@@ -370,11 +301,12 @@ namespace Instagramclone {
 		}
 
 		void LoadUserFeed() {
-			// Add some preloaded posts
-			this->currUser->addPost("Today is a nice day!");
+						this->currUser->addPost("Today is a nice day!");
 			this->currUser->addPost("Mental health is overrated");
 			this->currUser->addPost("I recently went to Mount Fuji with my friends. Had a great time!");
-			User* followed = this->network->searchUser("bookWorm");
+			User* followed = this->network->searchUser("gamerGirl");
+			User* friendUser = this->network->searchUser("codeNinja");
+			User* friend2 = this->network->searchUser("bookWorm");
 			if (followed)
 			{
 				followed->addPost("2025 is a great year for gamers!");
@@ -382,12 +314,20 @@ namespace Instagramclone {
 				this->currUser->follow(followed);
 				followed->sendFriendRequest(this->currUser);
 			}
-			// Create a User and load their feed
-			this->currUser->refreshFeed();
+			if (friendUser)
+			{
+				network->sendRequest(this->currUser, friendUser);
+				network->acceptRequest(this->currUser, friendUser);
+			}
+			if (friend2)
+			{
+				network->sendRequest(this->currUser, friend2);
+				network->acceptRequest(this->currUser, friend2);
+			}
+						this->currUser->refreshFeed();
 			auto posts = this->currUser->getPosts();
 
-			// Iterate through the user's feed and add PostControl for each Post
-			while (!posts.isEmpty()) {
+						while (!posts.isEmpty()) {
 				Post* currentPost = new Post(posts.pop());
 
 				PostControl^ postControl = gcnew PostControl(currentPost);
@@ -397,8 +337,7 @@ namespace Instagramclone {
 
 			posts = this->currUser->getFollowedPosts();
 
-			// Iterate through the user's feed and add PostControl for each Post
-			while (!posts.isEmpty()) {
+						while (!posts.isEmpty()) {
 				Post* currentPost = new Post(posts.pop());
 
 				PostControl^ postControl = gcnew PostControl(currentPost);
@@ -415,32 +354,30 @@ namespace Instagramclone {
 
 		void Form_Load(Object^ sender, EventArgs^ e)
 		{
-			LoadUserFeed();  // Load the posts when the form is loaded
-		}
+			LoadUserFeed();  		}
 
 		void loadNotifications()
 		{
 			notificationPanel->Controls->Clear();
-			int yPosition = 10; // Starting position for the first notification
-			auto notifications = this->currUser->getNotifications();
+			int yPosition = 10; 			auto notifications = this->currUser->getNotifications();
 			while (!notifications.isEmpty())
 			{
 				String^ notification = gcnew System::String(notifications.dequeue().c_str());
 				Label^ notificationLabel = gcnew Label();
 				notificationLabel->Text = notification;
-				notificationLabel->Width = 260;  // Set width of the label
-				notificationLabel->Height = 70;  // Set height of each label
-				notificationLabel->Font = gcnew System::Drawing::Font("Calibri", 10);
+				notificationLabel->Width = 260;  				notificationLabel->Height = 80;  				notificationLabel->Font = gcnew System::Drawing::Font("Calibri", 10);
 				notificationLabel->BackColor = Color::White;
 				notificationLabel->Padding = System::Windows::Forms::Padding(10);
-				notificationLabel->Location = System::Drawing::Point(10, yPosition);
+				notificationLabel->Location = System::Drawing::Point(10, yPosition);	
 
 				notificationPanel->Controls->Add(notificationLabel);
-				yPosition += notificationLabel->Height + 10;
+
+				yPosition += notificationLabel->Height + 15;
 			}
 			notificationPanel->Height = yPosition + 15;
 			
 		}
+
 
 		ref class PostControl : public System::Windows::Forms::UserControl
 		{
@@ -458,14 +395,12 @@ namespace Instagramclone {
 
 		private:
 			void InitializeComponent() {
-				// Initialize the layout of the post
-				this->Size = System::Drawing::Size(500, 130);
+								this->Size = System::Drawing::Size(500, 130);
 				this->BackColor = System::Drawing::Color::Cornsilk;
 
 
 
-				// Create and add Label for content
-				System::Windows::Forms::Label^ lblContent = gcnew System::Windows::Forms::Label();
+								System::Windows::Forms::Label^ lblContent = gcnew System::Windows::Forms::Label();
 				lblContent->Text = gcnew System::String(CurrentPost->content.c_str());
 				lblContent->Font = gcnew System::Drawing::Font("Calibri", 12);
 				lblContent->BackColor = System::Drawing::Color::Transparent;
@@ -476,8 +411,7 @@ namespace Instagramclone {
 				lblContent->AutoSize = true;
 				this->Controls->Add(lblContent);
 
-				// Create and add Label for owner
-				System::Windows::Forms::Label^ ownerContent = gcnew System::Windows::Forms::Label();
+								System::Windows::Forms::Label^ ownerContent = gcnew System::Windows::Forms::Label();
 				ownerContent->Text = gcnew System::String(CurrentPost->owner.c_str());
 				ownerContent->Font = gcnew System::Drawing::Font("Calibri", 14, System::Drawing::FontStyle::Bold);
 				ownerContent->AutoSize = true;
@@ -488,8 +422,7 @@ namespace Instagramclone {
 				this->Controls->Add(ownerContent);
 
 
-				// Create and add Label for Timestamp
-				System::Windows::Forms::Label^ lblTimestamp = gcnew System::Windows::Forms::Label();
+								System::Windows::Forms::Label^ lblTimestamp = gcnew System::Windows::Forms::Label();
 				lblTimestamp->Text = "Posted on: " + gcnew System::String(CurrentPost->timestamp.c_str());
 				lblTimestamp->Dock = System::Windows::Forms::DockStyle::Bottom;
 				lblTimestamp->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -522,8 +455,8 @@ private: System::Void friendRequestPnl_Click(System::Object^ sender, System::Eve
 	searchForm->Show();
 }
 private: System::Void panel2_Click(System::Object^ sender, System::EventArgs^ e) {
-	Search^ searchForm = gcnew Search(this->network, this->currUser);
-	searchForm->Show();
+	Friends^ friendsForm = gcnew Friends(this->network, this->currUser);
+	friendsForm->Show();
 }
 private: System::Void panel3_Click(System::Object^ sender, System::EventArgs^ e) {
 	Search^ searchForm = gcnew Search(this->network, this->currUser);

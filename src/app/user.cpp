@@ -58,8 +58,7 @@ User::User(const User& other)
     this->last_login = other.last_login;
     this->posts = other.posts;
 
-    // Deep copy of followed list
-    ListNode<User*> *current = other.followed.getHead();
+        ListNode<User*> *current = other.followed.getHead();
     while (current)
     {
         this->followed.add(current->data);
@@ -95,8 +94,7 @@ Stack<Post> User::getFollowedPosts() const { return this->followed_posts; }
 
 void User::setUsername(string username)
 {
-    // should contain letters and numbers only and have at least length of 5
-    bool isValid = true;
+        bool isValid = true;
     for (int i = 0; i < username.length(); i++)
     {
         if (!isalpha(username[i]) && !isdigit(username[i]))
@@ -113,8 +111,7 @@ void User::setUsername(string username)
 }
 void User::setPassword(string password)
 {
-    // should be of length 8 and have uppercase and lowercase letters, numbers, and special characters
-    bool containsUppercase = false;
+        bool containsUppercase = false;
     bool containsLowercase = false;
     bool containsNumbers = false;
     bool containsSpecial = false;
@@ -139,8 +136,7 @@ void User::setPassword(string password)
 }
 void User::setCity(string city)
 {
-    // Should only contain letters
-    for (int i = 0; i < city.length(); i++)
+        for (int i = 0; i < city.length(); i++)
     {
         if (!isalpha(city[i]) && !isspace(city[i]))
         {
@@ -194,24 +190,16 @@ void User::refreshFeed()
     }
 }
 
-void User::listFollowers() const
+ListNode<User*>* User::listFollowed() const
 {
     ListNode<User*> *current = followed.getHead();
-    while (current != nullptr)
-    {
-        cout << current->data->getUsername() << endl;
-        current = current->next;
-    }
+    return current;
 }
 
-void User::listFriends() const
+ListNode<User*>* User::listFriends() const
 {
     ListNode<User*> *current = friends.getHead();
-    while (current != nullptr)
-    {
-        cout << current->data->getUsername() << endl;
-        current = current->next;
-    }
+    return current;
 }
 
 ostream& operator<<(ostream& os, const User& user)
@@ -347,7 +335,7 @@ FriendRequest* User::getRequest(User *user)
 
 void User::follow(User *user)
 {
-    if (user == nullptr)
+    if (user == nullptr || this == user)
     {
         cout << "Invalid user" << endl;
         return;

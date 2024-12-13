@@ -21,18 +21,15 @@ private:
 public:
     UserGraph();
     ~UserGraph();
-    // Users
-    void addUser(string username, string password, string city);
+        void addUser(string username, string password, string city);
     void addUser(User* user);
     void removeUser(string username);
     User* searchUser(string username);
     bool authenticateLogin(string username, string password);
-    // Friend Requests
-    void sendRequest(User *sender, User *receiver);
+        void sendRequest(User *sender, User *receiver);
     void acceptRequest(User *sender, User *receiver);
     void rejectRequest(User *sender, User *receiver);
     void sendFollowRequest(User *sender, User *receiver);
     Vertex<User*>* getFirstUser();
-    // Messages
-    void sendMessage(User *sender, User *receiver, string content);
+        void sendMessage(User *sender, User *receiver, string content);
 };

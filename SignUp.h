@@ -21,20 +21,15 @@ namespace Instagramclone {
 		{
 			InitializeComponent();
 			loginActive = false;
-			// this->network = network; // store reference
-		}
+					}
 		SignUp(UserGraph *graph)
 		{
 			InitializeComponent();
 			loginActive = false;
-			this->network = graph; // store reference
-		}
+			this->network = graph; 		}
 
 	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		~SignUp()
+								~SignUp()
 		{
 			if (components)
 			{
@@ -61,17 +56,10 @@ namespace Instagramclone {
 	UserGraph* network;
 
 	private:
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		System::ComponentModel::Container^ components;
+								System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		void InitializeComponent(void)
+										void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(SignUp::typeid));
 			this->title = (gcnew System::Windows::Forms::Label());
@@ -91,10 +79,7 @@ namespace Instagramclone {
 			this->passPanel->SuspendLayout();
 			this->cityPnl->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// title
-			// 
-			this->title->AutoSize = true;
+												this->title->AutoSize = true;
 			this->title->BackColor = System::Drawing::Color::Transparent;
 			this->title->Font = (gcnew System::Drawing::Font(L"Script MT Bold", 40, System::Drawing::FontStyle::Bold));
 			this->title->Location = System::Drawing::Point(345, 85);
@@ -102,29 +87,20 @@ namespace Instagramclone {
 			this->title->Size = System::Drawing::Size(345, 65);
 			this->title->TabIndex = 0;
 			this->title->Text = L"Create Account";
-			// 
-			// usernameBox
-			// 
-			this->usernameBox->BackColor = System::Drawing::Color::White;
+												this->usernameBox->BackColor = System::Drawing::Color::White;
 			this->usernameBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->usernameBox->Font = (gcnew System::Drawing::Font(L"Calibri", 10));
 			this->usernameBox->Location = System::Drawing::Point(13, 13);
 			this->usernameBox->Name = L"usernameBox";
 			this->usernameBox->Size = System::Drawing::Size(325, 17);
 			this->usernameBox->TabIndex = 2;
-			// 
-			// usernamePnl
-			// 
-			this->usernamePnl->BackColor = System::Drawing::Color::White;
+												this->usernamePnl->BackColor = System::Drawing::Color::White;
 			this->usernamePnl->Controls->Add(this->usernameBox);
 			this->usernamePnl->Location = System::Drawing::Point(326, 224);
 			this->usernamePnl->Name = L"usernamePnl";
 			this->usernamePnl->Size = System::Drawing::Size(378, 48);
 			this->usernamePnl->TabIndex = 3;
-			// 
-			// usernameLabel
-			// 
-			this->usernameLabel->AutoSize = true;
+												this->usernameLabel->AutoSize = true;
 			this->usernameLabel->BackColor = System::Drawing::Color::Transparent;
 			this->usernameLabel->Font = (gcnew System::Drawing::Font(L"Calibri", 12));
 			this->usernameLabel->ForeColor = System::Drawing::Color::Black;
@@ -133,10 +109,7 @@ namespace Instagramclone {
 			this->usernameLabel->Size = System::Drawing::Size(115, 19);
 			this->usernameLabel->TabIndex = 5;
 			this->usernameLabel->Text = L"Enter username ";
-			// 
-			// passLabel
-			// 
-			this->passLabel->AutoSize = true;
+												this->passLabel->AutoSize = true;
 			this->passLabel->BackColor = System::Drawing::Color::Transparent;
 			this->passLabel->Font = (gcnew System::Drawing::Font(L"Calibri", 12));
 			this->passLabel->ForeColor = System::Drawing::Color::Black;
@@ -145,19 +118,13 @@ namespace Instagramclone {
 			this->passLabel->Size = System::Drawing::Size(109, 19);
 			this->passLabel->TabIndex = 7;
 			this->passLabel->Text = L"Enter password";
-			// 
-			// passPanel
-			// 
-			this->passPanel->BackColor = System::Drawing::Color::White;
+												this->passPanel->BackColor = System::Drawing::Color::White;
 			this->passPanel->Controls->Add(this->passBox);
 			this->passPanel->Location = System::Drawing::Point(327, 309);
 			this->passPanel->Name = L"passPanel";
 			this->passPanel->Size = System::Drawing::Size(378, 48);
 			this->passPanel->TabIndex = 6;
-			// 
-			// passBox
-			// 
-			this->passBox->BackColor = System::Drawing::Color::White;
+												this->passBox->BackColor = System::Drawing::Color::White;
 			this->passBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->passBox->Font = (gcnew System::Drawing::Font(L"Calibri", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -166,10 +133,7 @@ namespace Instagramclone {
 			this->passBox->Size = System::Drawing::Size(325, 16);
 			this->passBox->TabIndex = 2;
 			this->passBox->UseSystemPasswordChar = true;
-			// 
-			// btnSignUp
-			// 
-			this->btnSignUp->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(63)), static_cast<System::Int32>(static_cast<System::Byte>(18)),
+												this->btnSignUp->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(63)), static_cast<System::Int32>(static_cast<System::Byte>(18)),
 				static_cast<System::Int32>(static_cast<System::Byte>(37)));
 			this->btnSignUp->Enabled = false;
 			this->btnSignUp->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -183,10 +147,7 @@ namespace Instagramclone {
 			this->btnSignUp->Text = L"Sign Up";
 			this->btnSignUp->UseVisualStyleBackColor = false;
 			this->btnSignUp->Click += gcnew System::EventHandler(this, &SignUp::btnSignUp_Click);
-			// 
-			// terms
-			// 
-			this->terms->AutoSize = true;
+												this->terms->AutoSize = true;
 			this->terms->BackColor = System::Drawing::Color::Transparent;
 			this->terms->Font = (gcnew System::Drawing::Font(L"Calibri", 10));
 			this->terms->Location = System::Drawing::Point(370, 467);
@@ -196,10 +157,7 @@ namespace Instagramclone {
 			this->terms->Text = L"I have read and agreed to Terms and Conditions";
 			this->terms->UseVisualStyleBackColor = false;
 			this->terms->CheckedChanged += gcnew System::EventHandler(this, &SignUp::terms_CheckedChanged);
-			// 
-			// loginBtn
-			// 
-			this->loginBtn->ActiveLinkColor = System::Drawing::Color::OrangeRed;
+												this->loginBtn->ActiveLinkColor = System::Drawing::Color::OrangeRed;
 			this->loginBtn->AutoSize = true;
 			this->loginBtn->BackColor = System::Drawing::Color::Transparent;
 			this->loginBtn->Font = (gcnew System::Drawing::Font(L"Calibri", 14));
@@ -214,19 +172,13 @@ namespace Instagramclone {
 			this->loginBtn->Text = L"Log In";
 			this->loginBtn->VisitedLinkColor = System::Drawing::SystemColors::InfoText;
 			this->loginBtn->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &SignUp::loginBtn_LinkClicked);
-			// 
-			// cityPnl
-			// 
-			this->cityPnl->BackColor = System::Drawing::Color::White;
+												this->cityPnl->BackColor = System::Drawing::Color::White;
 			this->cityPnl->Controls->Add(this->cityBox);
 			this->cityPnl->Location = System::Drawing::Point(327, 399);
 			this->cityPnl->Name = L"cityPnl";
 			this->cityPnl->Size = System::Drawing::Size(378, 48);
 			this->cityPnl->TabIndex = 12;
-			// 
-			// cityBox
-			// 
-			this->cityBox->BackColor = System::Drawing::Color::White;
+												this->cityBox->BackColor = System::Drawing::Color::White;
 			this->cityBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->cityBox->Font = (gcnew System::Drawing::Font(L"Calibri", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -234,10 +186,7 @@ namespace Instagramclone {
 			this->cityBox->Name = L"cityBox";
 			this->cityBox->Size = System::Drawing::Size(325, 16);
 			this->cityBox->TabIndex = 2;
-			// 
-			// cityLabel
-			// 
-			this->cityLabel->AutoSize = true;
+												this->cityLabel->AutoSize = true;
 			this->cityLabel->BackColor = System::Drawing::Color::Transparent;
 			this->cityLabel->Font = (gcnew System::Drawing::Font(L"Calibri", 12));
 			this->cityLabel->ForeColor = System::Drawing::Color::Black;
@@ -246,10 +195,7 @@ namespace Instagramclone {
 			this->cityLabel->Size = System::Drawing::Size(110, 19);
 			this->cityLabel->TabIndex = 13;
 			this->cityLabel->Text = L"Enter city name";
-			// 
-			// SignUp
-			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+												this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;

@@ -41,8 +41,7 @@ void HashTable::insert(const string& username, const string& password) {
         throw std::overflow_error("Hash table is full!");
     }
 
-    // Check if username already exists
-    if (this->search(username) != "")
+        if (this->search(username) != "")
     {
         cout << "Username already exists" << endl;
         return;

@@ -51,7 +51,6 @@ LinkedList<T>::~LinkedList() {
     clear();
 }
 
-// copy constructor
 template <typename T>
 LinkedList<T>::LinkedList(const LinkedList<T>& other) {
     head = nullptr;
@@ -65,7 +64,6 @@ LinkedList<T>::LinkedList(const LinkedList<T>& other) {
     }
 }
 
-// Assignment operator
 template <typename T>
 LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>& other) {
     if (this != &other) {

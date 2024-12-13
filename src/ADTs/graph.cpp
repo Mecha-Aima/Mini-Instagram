@@ -23,7 +23,6 @@ void Graph<T>::add(T data)
     size++;
 }
 
-// Copy constructor
 template <typename T>
 Graph<T>::Graph(const Graph<T>& other) : head(nullptr), size(0) {
     Vertex<T> *otherCurrent = other.head;
@@ -45,7 +44,6 @@ Graph<T>::Graph(const Graph<T>& other) : head(nullptr), size(0) {
     }
 }
 
-// Assignment operator overload
 template <typename T>
 Graph<T>& Graph<T>::operator=(const Graph<T>& other) {
     if (this != &other) {
@@ -182,8 +180,7 @@ void Graph<T>::remove(T data)
         if (current->value == data)
         {
             found = true;
-    // Remove all edges connected to this vertex
-            AdjListNode<T> *adj = current->head;
+                AdjListNode<T> *adj = current->head;
             while (adj) {
                 Vertex<T> *neighbor = getVertex(adj->data);
                 if (neighbor) {
@@ -192,8 +189,7 @@ void Graph<T>::remove(T data)
                 adj = adj->next;
             }
 
-            // Disconnect and delete the vertex
-            if (previous == nullptr) {
+                        if (previous == nullptr) {
                 head = current->nextVertex;
             } else {
                 previous->nextVertex = current->nextVertex;

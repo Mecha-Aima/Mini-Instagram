@@ -55,7 +55,7 @@ void AdminUser::viewUser(string username) const
     user->posts.print();
     cout << setw(50) << setfill('-') << "" << "\n" << setfill(' ');
     cout << "FOLLOWERS" << endl;
-    user->listFollowers();
+    user->listFollowed();
     cout << setw(50) << setfill('-') << "" << "\n" << setfill(' ');
     cout << "FRIENDS" << endl;
     user->listFriends();

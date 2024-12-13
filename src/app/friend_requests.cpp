@@ -28,8 +28,7 @@ FriendRequests::FriendRequests() {}
 void FriendRequests::deepCopy(const FriendRequests& other) {
     for (int i = 0; i < other.fr.getSize(); i++) {
         FriendRequest* originalRequest = other.fr[i];
-        // Create a new FriendRequest with the same data
-        FriendRequest* newRequest = new FriendRequest(
+                FriendRequest* newRequest = new FriendRequest(
             originalRequest->sender, 
             originalRequest->receiver, 
             originalRequest->status
