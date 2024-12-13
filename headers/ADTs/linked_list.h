@@ -35,12 +35,12 @@ public:
     void removeAt(int index);
     void insertAt(int index, T data);
     void clear();
+    ListNode<T>* getHead() const { return head; }
 
 private:
     ListNode<T>* head;
     ListNode<T>* tail;
     int size;
-    ListNode<T>* getHead() const { return head; }
 };
 
 template <typename T>

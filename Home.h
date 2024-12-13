@@ -2,6 +2,8 @@
 #include "../Instagram_clone/headers/ADTs/stack.h"
 #include "../Instagram_clone/headers/app/user.h"
 #include "../Instagram_clone/headers/app/users_graph.h"
+#include "SearchForm.h"
+
 
 namespace Instagramclone {
 
@@ -54,6 +56,22 @@ namespace Instagramclone {
 	System::Windows::Forms::Panel^ sidebarPanel;
 	System::Windows::Forms::Panel^ notificationPanel;
 	bool panelOpen = false;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ friendRequestlbl;
+	private: System::Windows::Forms::Panel^ friendRequestPnl;
+
+
+	private: System::Windows::Forms::PictureBox^ friendIcon;
+	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Panel^ panel4;
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::Label^ label4;
+
 
 	private:
 		System::ComponentModel::Container^ components;
@@ -73,9 +91,30 @@ namespace Instagramclone {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->sidebarPanel = (gcnew System::Windows::Forms::Panel());
 			this->notificationPanel = (gcnew System::Windows::Forms::Panel());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->friendRequestlbl = (gcnew System::Windows::Forms::Label());
+			this->friendRequestPnl = (gcnew System::Windows::Forms::Panel());
+			this->friendIcon = (gcnew System::Windows::Forms::PictureBox());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bellIcon))->BeginInit();
 			this->panel1->SuspendLayout();
 			this->sidebarPanel->SuspendLayout();
+			this->friendRequestPnl->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->friendIcon))->BeginInit();
+			this->panel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->panel3->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			this->panel4->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// title
@@ -126,8 +165,8 @@ namespace Instagramclone {
 			// 
 			// sidebarPanel
 			// 
-			this->sidebarPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(211)),
-				static_cast<System::Int32>(static_cast<System::Byte>(101)));
+			this->sidebarPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->sidebarPanel->Controls->Add(this->notificationPanel);
 			this->sidebarPanel->Location = System::Drawing::Point(787, 1);
 			this->sidebarPanel->Name = L"sidebarPanel";
@@ -146,6 +185,149 @@ namespace Instagramclone {
 			this->notificationPanel->Size = System::Drawing::Size(280, 0);
 			this->notificationPanel->TabIndex = 0;
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(0, 0);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(35, 13);
+			this->label1->TabIndex = 4;
+			this->label1->Text = L"label1";
+			// 
+			// friendRequestlbl
+			// 
+			this->friendRequestlbl->AutoSize = true;
+			this->friendRequestlbl->BackColor = System::Drawing::Color::Transparent;
+			this->friendRequestlbl->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->friendRequestlbl->Location = System::Drawing::Point(60, 21);
+			this->friendRequestlbl->Name = L"friendRequestlbl";
+			this->friendRequestlbl->Size = System::Drawing::Size(84, 19);
+			this->friendRequestlbl->TabIndex = 5;
+			this->friendRequestlbl->Text = L"Add Friend";
+			// 
+			// friendRequestPnl
+			// 
+			this->friendRequestPnl->BackColor = System::Drawing::Color::Khaki;
+			this->friendRequestPnl->Controls->Add(this->friendIcon);
+			this->friendRequestPnl->Controls->Add(this->friendRequestlbl);
+			this->friendRequestPnl->Location = System::Drawing::Point(588, 112);
+			this->friendRequestPnl->Name = L"friendRequestPnl";
+			this->friendRequestPnl->Size = System::Drawing::Size(182, 60);
+			this->friendRequestPnl->TabIndex = 6;
+			this->friendRequestPnl->Click += gcnew System::EventHandler(this, &Home::friendRequestPnl_Click);
+			// 
+			// friendIcon
+			// 
+			this->friendIcon->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"friendIcon.BackgroundImage")));
+			this->friendIcon->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->friendIcon->Location = System::Drawing::Point(12, 13);
+			this->friendIcon->Name = L"friendIcon";
+			this->friendIcon->Size = System::Drawing::Size(35, 36);
+			this->friendIcon->TabIndex = 6;
+			this->friendIcon->TabStop = false;
+			// 
+			// panel2
+			// 
+			this->panel2->BackColor = System::Drawing::Color::WhiteSmoke;
+			this->panel2->Controls->Add(this->pictureBox1);
+			this->panel2->Controls->Add(this->label2);
+			this->panel2->Location = System::Drawing::Point(588, 200);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(182, 60);
+			this->panel2->TabIndex = 7;
+			this->panel2->Click += gcnew System::EventHandler(this, &Home::panel2_Click);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->pictureBox1->Location = System::Drawing::Point(12, 13);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(35, 36);
+			this->pictureBox1->TabIndex = 6;
+			this->pictureBox1->TabStop = false;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(60, 21);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(95, 19);
+			this->label2->TabIndex = 5;
+			this->label2->Text = L"View Friends";
+			// 
+			// panel3
+			// 
+			this->panel3->BackColor = System::Drawing::Color::Sienna;
+			this->panel3->Controls->Add(this->pictureBox2);
+			this->panel3->Controls->Add(this->label3);
+			this->panel3->Location = System::Drawing::Point(588, 285);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(182, 60);
+			this->panel3->TabIndex = 8;
+			this->panel3->Click += gcnew System::EventHandler(this, &Home::panel3_Click);
+			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
+			this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->pictureBox2->Location = System::Drawing::Point(12, 13);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(35, 36);
+			this->pictureBox2->TabIndex = 6;
+			this->pictureBox2->TabStop = false;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::Color::Transparent;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label3->Location = System::Drawing::Point(60, 21);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(105, 19);
+			this->label3->TabIndex = 5;
+			this->label3->Text = L"Send Message";
+			// 
+			// panel4
+			// 
+			this->panel4->BackColor = System::Drawing::Color::WhiteSmoke;
+			this->panel4->Controls->Add(this->pictureBox3);
+			this->panel4->Controls->Add(this->label4);
+			this->panel4->Location = System::Drawing::Point(588, 363);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(182, 60);
+			this->panel4->TabIndex = 9;
+			this->panel4->Click += gcnew System::EventHandler(this, &Home::panel4_Click);
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.BackgroundImage")));
+			this->pictureBox3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->pictureBox3->Location = System::Drawing::Point(12, 13);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(35, 36);
+			this->pictureBox3->TabIndex = 6;
+			this->pictureBox3->TabStop = false;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::Transparent;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::Color::Black;
+			this->label4->Location = System::Drawing::Point(60, 21);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(61, 19);
+			this->label4->TabIndex = 5;
+			this->label4->Text = L"Log out";
+			// 
 			// Home
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -153,17 +335,35 @@ namespace Instagramclone {
 			this->AutoScroll = true;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1064, 681);
+			this->ClientSize = System::Drawing::Size(1081, 698);
+			this->Controls->Add(this->panel4);
+			this->Controls->Add(this->panel3);
+			this->Controls->Add(this->panel2);
+			this->Controls->Add(this->friendRequestPnl);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->sidebarPanel);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->feedFlowPanel);
 			this->Controls->Add(this->title);
 			this->Name = L"Home";
 			this->Text = L"Home";
+			this->Load += gcnew System::EventHandler(this, &Home::Home_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bellIcon))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->sidebarPanel->ResumeLayout(false);
 			this->sidebarPanel->PerformLayout();
+			this->friendRequestPnl->ResumeLayout(false);
+			this->friendRequestPnl->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->friendIcon))->EndInit();
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->panel3->ResumeLayout(false);
+			this->panel3->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			this->panel4->ResumeLayout(false);
+			this->panel4->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -183,6 +383,7 @@ namespace Instagramclone {
 				followed->sendFriendRequest(this->currUser);
 			}
 			// Create a User and load their feed
+			this->currUser->refreshFeed();
 			auto posts = this->currUser->getPosts();
 
 			// Iterate through the user's feed and add PostControl for each Post
@@ -227,7 +428,7 @@ namespace Instagramclone {
 				String^ notification = gcnew System::String(notifications.dequeue().c_str());
 				Label^ notificationLabel = gcnew Label();
 				notificationLabel->Text = notification;
-				notificationLabel->Width = 220;  // Set width of the label
+				notificationLabel->Width = 260;  // Set width of the label
 				notificationLabel->Height = 70;  // Set height of each label
 				notificationLabel->Font = gcnew System::Drawing::Font("Calibri", 10);
 				notificationLabel->BackColor = Color::White;
@@ -312,5 +513,25 @@ namespace Instagramclone {
 		}
 		panelOpen = !panelOpen;
 	}
+
+private: System::Void Home_Load(System::Object^ sender, System::EventArgs^ e) {
+
+}
+private: System::Void friendRequestPnl_Click(System::Object^ sender, System::EventArgs^ e) {
+	Search^ searchForm = gcnew Search(this->network, this->currUser);
+	searchForm->Show();
+}
+private: System::Void panel2_Click(System::Object^ sender, System::EventArgs^ e) {
+	Search^ searchForm = gcnew Search(this->network, this->currUser);
+	searchForm->Show();
+}
+private: System::Void panel3_Click(System::Object^ sender, System::EventArgs^ e) {
+	Search^ searchForm = gcnew Search(this->network, this->currUser);
+	searchForm->Show();
+}
+private: System::Void panel4_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+	delete this;
+}
 };
 }

@@ -51,6 +51,9 @@
     <ClCompile Include="Home.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SearchForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Welcome.h">
@@ -98,6 +101,9 @@
     <ClInclude Include="Home.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SearchForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="media\bell_icon.png">
@@ -118,7 +124,19 @@
     <Image Include="media\folds_bg.jpg">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="media\follower_icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="media\friend_request.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="media\message.png">
+      <Filter>Resource Files</Filter>
+    </Image>
     <Image Include="media\peach_bg.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="media\search.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

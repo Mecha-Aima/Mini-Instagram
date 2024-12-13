@@ -321,7 +321,6 @@ namespace Instagramclone {
 				{
 					Home^ homeForm = gcnew Home(currUser, network);
 					homeForm->Show();
-					this->Close();
 				}
 				else
 				{
@@ -349,7 +348,6 @@ namespace Instagramclone {
 				this->network->addUser(newUser);
 				Home^ homeForm = gcnew Home(newUser, network);
 				homeForm->Show();
-				this->Close();
 			}
 		}
 	}

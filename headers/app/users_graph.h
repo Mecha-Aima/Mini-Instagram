@@ -32,6 +32,7 @@ public:
     void acceptRequest(User *sender, User *receiver);
     void rejectRequest(User *sender, User *receiver);
     void sendFollowRequest(User *sender, User *receiver);
+    Vertex<User*>* getFirstUser();
     // Messages
     void sendMessage(User *sender, User *receiver, string content);
 };

@@ -17,6 +17,11 @@ UserGraph::~UserGraph() {
     user_lookup = nullptr;
 }
 
+Vertex<User*>* UserGraph::getFirstUser()
+{
+    return this->head;
+}
+
 void UserGraph::addUser(User* user)
 {
     if (this->user_tree.containsUser(user->username))
