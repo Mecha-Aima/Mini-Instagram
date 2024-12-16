@@ -13,6 +13,7 @@ public:
     bool setStatus(std::string st);
 
     friend ostream& operator<<(std::ostream& os, const FriendRequest& fr);
+    bool operator==(const FriendRequest& request);
 };
 
 class FriendRequests {
@@ -22,6 +23,7 @@ public:
     ~FriendRequests();
     FriendRequests(const FriendRequests& other);
     FriendRequests& operator=(const FriendRequests& other);
+    bool alreadyAdded(FriendRequest* fr) const;
     void addRequest(FriendRequest *fr);
     void processRequests();
     void showRequests();

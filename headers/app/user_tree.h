@@ -8,6 +8,8 @@
 #include "../app/user.h"
 
 class UserTree : public AVLTree<User *> {
+private:
+    void insert(TreeVertex<User*>*& node, User* val);
 public:
     UserTree();
     void insertUser(User *user);

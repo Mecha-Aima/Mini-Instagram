@@ -40,6 +40,7 @@ public:
     Message getLatestMessage() const;
     void printMessages() const;
     void clearMessages();
+    StackNode<Message>* getTop() { return this->messages.getTop(); }
 };
 
 class realTimeMessages { private:

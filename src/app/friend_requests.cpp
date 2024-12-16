@@ -23,6 +23,11 @@ bool FriendRequest::setStatus(std::string st)
     return false;
 }
 
+bool FriendRequest::operator==(const FriendRequest& other)
+{
+    return (this->receiver == other.receiver && this->sender == other.sender);
+}
+
 FriendRequests::FriendRequests() {}
 
 void FriendRequests::deepCopy(const FriendRequests& other) {
@@ -64,10 +69,24 @@ FriendRequests& FriendRequests::operator=(const FriendRequests& other)
 
 void FriendRequests::addRequest(FriendRequest *fr)
 {
-    if (fr->status == "pending" || fr->status == "accepted" || fr->status == "declined")
+    if (!alreadyAdded(fr) && (fr->status == "pending" || fr->status == "accepted" || fr->status == "declined"))
         this->fr.enqueue(fr);
     else
         delete fr;
+}
+
+bool FriendRequests::alreadyAdded(FriendRequest* request) const
+{
+    QueueNode<FriendRequest*>* current = this->fr.getFront();
+    while (current != nullptr)
+    {
+        if (*(current->data) == *request)
+        {
+            return true;
+        }
+        current = current->next;
+    }
+    return false;
 }
 
 void FriendRequests::processRequests()

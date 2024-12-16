@@ -3,6 +3,8 @@
 #include <queue>
 using namespace std;
 
+class User;
+
 template <typename T>
 struct QueueNode {
     T data;
@@ -12,6 +14,7 @@ struct QueueNode {
 
 template <typename T>
 class Queue {
+    friend class User;
 private:
     QueueNode<T>* front;
     QueueNode<T>* back;

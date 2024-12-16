@@ -26,6 +26,7 @@ public:
     T peek() const;
     bool isEmpty() const;
     int getSize() const;
+    StackNode<T>* getTop();
     void print() const; 
     void clear();
 
@@ -121,6 +122,12 @@ bool Stack<T>::isEmpty() const {
 template <typename T>
 int Stack<T>::getSize() const {
     return this->size;
+}
+
+template <typename T>
+StackNode<T>* Stack<T>::getTop()
+{
+    return this->top;
 }
 
 template <typename T>

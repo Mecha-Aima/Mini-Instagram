@@ -67,12 +67,13 @@ public:
     void follow(User* user);
     void newsFeed();
     void refreshFeed();
-        Messages& getMessages();
+        Messages getMessages();
     void sendMessage(const string& content, User *receiver);
     void openInbox();     Message peekInbox();
         void addRequest(FriendRequest *fr);
     void sendFriendRequest(User* user);
     void processRequests();
+    QueueNode<FriendRequest*>* getRequests();
     void showRequests();
     FriendRequest* getRequest(User *user);
         void receiveNotification(User *receiver, const string& content);

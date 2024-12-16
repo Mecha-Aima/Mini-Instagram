@@ -1,5 +1,6 @@
 #pragma once
 #include "headers/app/users_graph.h"
+#include "Requests.h"
 #include <msclr/marshal_cppstd.h>
 
 namespace Instagramclone {
@@ -42,7 +43,15 @@ namespace Instagramclone {
 	protected:
 		System::ComponentModel::Container^ components;
 		UserGraph* network;
-		User* currUser;
+	private: System::Windows::Forms::Panel^ friendRequestbtn;
+	protected:
+
+	protected:
+
+	protected:
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Label^ label2;
+		   User* currUser;
 
 		void LoadFriendAndFollowerPanels()
 		{
@@ -162,6 +171,11 @@ namespace Instagramclone {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Friends::typeid));
 			this->title = (gcnew System::Windows::Forms::Label());
+			this->friendRequestbtn = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->friendRequestbtn->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// title
@@ -177,6 +191,39 @@ namespace Instagramclone {
 			this->title->TabIndex = 2;
 			this->title->Text = L"Your Friends";
 			// 
+			// friendRequestbtn
+			// 
+			this->friendRequestbtn->BackColor = System::Drawing::Color::GhostWhite;
+			this->friendRequestbtn->Controls->Add(this->pictureBox1);
+			this->friendRequestbtn->Controls->Add(this->label2);
+			this->friendRequestbtn->Location = System::Drawing::Point(469, 563);
+			this->friendRequestbtn->Name = L"friendRequestbtn";
+			this->friendRequestbtn->Size = System::Drawing::Size(221, 46);
+			this->friendRequestbtn->TabIndex = 8;
+			this->friendRequestbtn->Click += gcnew System::EventHandler(this, &Friends::friendRequestbtn_Click);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->pictureBox1->Location = System::Drawing::Point(12, 6);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(35, 36);
+			this->pictureBox1->TabIndex = 6;
+			this->pictureBox1->TabStop = false;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(54, 13);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(154, 19);
+			this->label2->TabIndex = 5;
+			this->label2->Text = L"View Friend Requests";
+			// 
 			// Friends
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -184,13 +231,22 @@ namespace Instagramclone {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1064, 681);
+			this->Controls->Add(this->friendRequestbtn);
 			this->Controls->Add(this->title);
 			this->Name = L"Friends";
 			this->Text = L"Friends";
+			this->friendRequestbtn->ResumeLayout(false);
+			this->friendRequestbtn->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	
+private: System::Void friendRequestbtn_Click(System::Object^ sender, System::EventArgs^ e) {
+	Requests^ requestForm = gcnew Requests(this->network, this->currUser);
+	requestForm->Show();
+}
+};
 }

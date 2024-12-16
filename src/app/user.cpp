@@ -210,7 +210,7 @@ ostream& operator<<(ostream& os, const User& user)
     return os;
 }
 
-Messages& User::getMessages()
+Messages User::getMessages()
 {
     return this->messages;
 }
@@ -224,6 +224,11 @@ void User::addRequest(FriendRequest *fr)
 void User::processRequests()
 {
     this->friendRequests.processRequests();
+}
+
+QueueNode<FriendRequest*>* User::getRequests()
+{
+    return this->friendRequests.fr.getFront();
 }
 
 void User::showRequests()
