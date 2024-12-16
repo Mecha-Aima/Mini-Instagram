@@ -1,5 +1,5 @@
 #pragma once
-#include "../Instagram_clone/headers/app/users_graph.h"
+#include "headers/app/users_graph.h"
 #include <msclr/marshal_cppstd.h>
 
 namespace Instagramclone {
@@ -163,16 +163,23 @@ namespace Instagramclone {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Friends::typeid));
 			this->title = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
-												this->title->AutoSize = true;
+			// 
+			// title
+			// 
+			this->title->AutoSize = true;
 			this->title->BackColor = System::Drawing::Color::Transparent;
-			this->title->Font = (gcnew System::Drawing::Font(L"Script MT Bold", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->title->Font = (gcnew System::Drawing::Font(L"Script MT Bold", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->title->ForeColor = System::Drawing::Color::White;
 			this->title->Location = System::Drawing::Point(52, 37);
 			this->title->Name = L"title";
 			this->title->Size = System::Drawing::Size(281, 58);
 			this->title->TabIndex = 2;
 			this->title->Text = L"Your Friends";
-												this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			// 
+			// Friends
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;

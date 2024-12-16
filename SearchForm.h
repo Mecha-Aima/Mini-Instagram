@@ -1,6 +1,6 @@
 #pragma once
 #include <msclr/marshal_cppstd.h>
-#include "../Instagram_clone/headers/app/users_graph.h"
+#include "headers/app/users_graph.h"
 
 namespace Instagramclone {
 
